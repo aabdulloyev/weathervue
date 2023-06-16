@@ -1,0 +1,55 @@
+@import url("./fonts.scss");
+
+@mixin media($size) {
+    @media (max-width: #{$size}px) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+body {
+    background: #0d1117;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include media(1270) {
+        max-width: 1130px;
+    }
+
+    @include media(1150) {
+        max-width: 1030px;
+    }
+
+    @include media(1030) {
+        max-width: 930px;
+    }
+    @include media(880) {
+        max-width: unset;
+    }
+}
+
+@import "./common.scss";
